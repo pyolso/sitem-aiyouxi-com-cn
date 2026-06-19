@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f3f2ef;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #2c2c2c;
+      padding: 2rem 1.5rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ---- 导航 ---- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0 1.8rem;
+      border-bottom: 1px solid #dad8d0;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo-placeholder {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #3f3f3f;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5b5b5b;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: #1f1f1f;
+    }
+
+    /* ---- 主体 ---- */
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
+      color: #1d1d1d;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6e6e6e;
+      margin-bottom: 2.8rem;
+      max-width: 65%;
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 450;
+      margin: 2.8rem 0 1rem;
+      border-left: 3px solid #b0a89c;
+      padding-left: 1rem;
+      color: #222;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 0.98rem;
+    }
+
+    .text-muted {
+      color: #6b6b6b;
+    }
+
+    /* ---- 场景卡片（三个模块） ---- */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin: 1.2rem 0 2rem;
+    }
+
+    .scene-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6e2da;
+      transition: border 0.15s, box-shadow 0.15s;
+    }
+
+    .scene-item:hover {
+      border-color: #cbc5bb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .scene-item h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      color: #2b2b2b;
+    }
+
+    .scene-item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #5a5a5a;
+    }
+
+    /* ---- FAQ 摘要 ---- */
+    .faq-block {
+      background: #faf9f6;
+      padding: 1.6rem 1.8rem;
+      border-radius: 18px;
+      margin: 2.5rem 0 2.2rem;
+      border: 1px solid #e3ded6;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      font-size: 0.96rem;
+      margin-bottom: 0.1rem;
+      color: #232323;
+    }
+
+    .faq-a {
+      font-size: 0.91rem;
+      color: #5f5f5f;
+    }
+
+    /* ---- 按钮 / 链接 ---- */
+    .inline-link {
+      color: #3f3f3f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #bdb6ab;
+      transition: text-decoration-color 0.15s;
+    }
+
+    .inline-link:hover {
+      text-decoration-color: #1f1f1f;
+    }
+
+    /* ---- 尾部 ---- */
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dbd7cf;
+      font-size: 0.85rem;
+      color: #84817a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ---- 响应式 ---- */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        font-size: 0.88rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .subhead {
+        max-width: 100%;
+      }
+
+      .scene-item {
+        padding: 1rem 1.2rem;
+      }
+
+      .faq-block {
+        padding: 1.2rem 1.2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- 顶部导航 -->
+  <nav>
+    <span class="logo-placeholder">▪ 简明指南</span>
+    <div class="nav-links">
+      <a href="#">介绍</a>
+      <a href="#">场景</a>
+      <a href="#">说明</a>
+    </div>
+  </nav>
+
+  <!-- 核心介绍 -->
+  <h1>爱游戏：<br>一次关于使用的简短梳理</h1>
+  <div class="subhead">
+    算不上教程，更像是一份随手备忘录——把你可能关心的几件事，按顺序摆了出来。
+  </div>
+
+  <p>
+    对于初次接触 <a href="https://sitem-aiyouxi.com.cn" class="inline-link">爱游戏</a> 的朋友，比起功能清单，更重要的或许是先弄清楚它怎么融入日常。这个站点本身并不复杂，但浏览时留意一些小细节，能省下不少反复翻找的工夫。
+  </p>
+
+  <p>
+    下面三个场景，是从不同使用习惯出发做的归纳。你可以根据自己当下的需求，挑一个先看看。
+  </p>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-grid">
+    <div class="scene-item">
+      <h3>场景一 · 快速浏览与筛选</h3>
+      <p>
+        如果你只是随便逛逛，不想一上来就注册或填写资料，可以直接看看站内分类和推荐列表。很多内容不需要登录就能预览，等觉得有用了再决定下一步。这样压力小，也更接近浏览杂志的感觉。
+      </p>
+    </div>
+    <div class="scene-item">
+      <h3>场景二 · 检索与收藏</h3>
+      <p>
+        心里已经有目标了？站内的搜索和标签筛选响应挺快。找到感兴趣的东西之后，可以先收藏或者记下页面链接。我自己的习惯是开一个临时标签页组，攒到一定数量再统一整理，挺省心的。
+      </p>
+    </div>
+    <div class="scene-item">
+      <h3>场景三 · 长期使用的小提醒</h3>
+      <p>
+        如果打算经常过来，建议花几分钟看看页面底部的说明区域，尤其是关于更新频率和账号关联的部分。另外不同时段访问，首页推荐内容会有变化，有时候早上看到的和晚上看到的完全不一样，算是个小彩蛋。
+      </p>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="faq-block">
+    <div class="faq-item">
+      <div class="faq-q">问：是否需要先注册才能使用？</div>
+      <div class="faq-a">大部分浏览功能不需要账号。但涉及收藏、评论或个性化推荐时，会提示你登录。建议先逛一圈再决定。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：移动端和电脑端体验一样吗？</div>
+      <div class="faq-a">布局上做了响应式适配，手机浏览器直接打开也能正常阅读。但部分交互（比如鼠标悬停预览）在触摸屏上会略有不同，属于正常现象。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：内容更新大概是什么频率？</div>
+      <div class="faq-a">没有固定时间表，但每周至少会有几次补充或调整。如果你有特别关注的方向，隔几天回来看一眼就好。</div>
+    </div>
+  </div>
+
+  <!-- 额外一段叙述，带一点克制提醒 -->
+  <p class="text-muted">
+    最后说一句不相关的：网络上的信息越看越多，反而容易忘了最初想找什么。偶尔退一步，把打开的页面关掉几个，也许比拼命收藏更有用。<a href="https://sitem-aiyouxi.com.cn" class="inline-link">爱游戏</a> 本身也只是一个站点，不值得你花太多精力去研究它——合适的时候用用，不合适就关掉，这样最自然。
+  </p>
+
+  <!-- 页脚 -->
+  <footer>
+    <span>© 爱游戏 · 简明指南</span>
+    <span>仅作信息参考，内容以实际页面为准</span>
+  </footer>
+</div>
+</body>
+</html>

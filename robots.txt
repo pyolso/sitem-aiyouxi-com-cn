@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pyolso.github.io/sitem-aiyouxi-com-cn/sitemap.xml
