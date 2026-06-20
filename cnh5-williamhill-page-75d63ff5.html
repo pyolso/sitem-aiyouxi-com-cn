@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料整理 · 威廉希尔信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      background: #f7f5f0;
+      color: #1e1e1e;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .page-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 0 60px 0;
+    }
+
+    /* 深色头图 — 克制且带有微妙的纹理感 */
+    .hero {
+      background: #1d252c;
+      background-image: radial-gradient(circle at 15% 30%, #2b3843 0%, #161c22 100%);
+      margin: 20px -20px 0 -20px;
+      padding: 80px 30px 56px 30px;
+      text-align: center;
+      color: #eae7df;
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 32px,
+        rgba(255, 255, 240, 0.014) 32px,
+        rgba(255, 255, 240, 0.014) 64px
+      );
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      color: #f3efe6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #b9b2a4;
+      font-weight: 300;
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    /* 正文区：浅色底、舒适阅读间距 */
+    .content-area {
+      background: #ffffff;
+      margin: 32px 0 0 0;
+      padding: 36px 28px 40px 28px;
+      border-radius: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    @media (min-width: 680px) {
+      .content-area {
+        padding: 44px 48px 48px 48px;
+      }
+    }
+
+    .content-area h2 {
+      font-size: 1.4rem;
+      font-weight: 430;
+      margin: 28px 0 10px 0;
+      border-left: 4px solid #a0896e;
+      padding-left: 14px;
+      color: #2b2b2b;
+    }
+
+    .content-area h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .content-area p {
+      margin: 0 0 16px 0;
+      font-weight: 380;
+      text-align: justify;
+    }
+
+    /* 引用提示块 — 冷静、略带索引意味 */
+    .callout {
+      background: #f3efe8;
+      padding: 20px 22px;
+      margin: 24px 0;
+      border-radius: 16px;
+      border-left: 5px solid #a0896e;
+      font-size: 0.98rem;
+      color: #2d2d2d;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .callout strong {
+      font-weight: 500;
+      color: #3e3a32;
+      letter-spacing: 0.3px;
+    }
+
+    .callout a {
+      color: #8f7a5c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      font-weight: 450;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .callout a:hover {
+      color: #5c4b33;
+      text-decoration-color: #5c4b33;
+    }
+
+    /* 正文中的链接 — 强调色 */
+    .content-area a {
+      color: #8f7a5c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.2px;
+      text-decoration-color: #d5cbbc;
+      font-weight: 450;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .content-area a:hover {
+      color: #4d3f2c;
+      text-decoration-color: #4d3f2c;
+    }
+
+    /* 列表 — 简洁、克制 */
+    ul {
+      margin: 8px 0 16px 22px;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+      color: #1e1e1e;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: #a0896e;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* 摘录块（类似FAQ摘要风格） */
+    .faq-note {
+      background: #faf9f6;
+      padding: 14px 20px;
+      margin: 20px 0 10px 0;
+      border-radius: 14px;
+      border: 1px solid #e5dfd6;
+    }
+
+    .faq-note p {
+      margin: 0 0 4px 0;
+    }
+
+    .faq-note .q {
+      font-weight: 450;
+      color: #2f2a21;
+    }
+
+    .faq-note .a {
+      color: #3b3b3b;
+      font-size: 0.96rem;
+    }
+
+    /* 分隔装饰 */
+    .divider {
+      margin: 30px 0 18px 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d5cdbf, transparent);
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 520px) {
+      .hero {
+        padding: 60px 20px 40px 20px;
+        border-radius: 0 0 20px 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .content-area {
+        padding: 28px 18px 32px 18px;
+      }
+    }
+
+    /* 小字备注 */
+    .footnote {
+      margin-top: 24px;
+      font-size: 0.88rem;
+      color: #7c756a;
+      text-align: center;
+      border-top: 1px solid #ece6dc;
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="hero">
+      <h1>信息索引 · 威廉希尔</h1>
+      <p class="sub">从资料整理的角度，梳理平台背景、内容场景与访问路径</p>
+    </header>
+
+    <div class="content-area">
+
+      <h2>一、索引的起点</h2>
+      <p>在体育文化与在线服务交叉的领域中，“威廉希尔”是一个频繁出现的名字。它最早源于英国，长期从事赛事赔率与博彩资讯服务，逐步发展成为一个覆盖多种运动项目、实时数据与市场动态的平台。对于想要系统了解这一品牌或浏览其当前内容的人来说，直接访问其官方网站是最稳妥的起点。</p>
+
+      <p>在资料整理过程中，我发现很多用户会通过不同渠道搜索相关信息，但官方索引页往往是最直接的信息源头。如果你也正在整理或查阅相关资料，可以先将 <a href="https://cnh5--williamhill.com">威廉希尔</a> 加入浏览书签，作为一个稳定的信息锚点。</p>
+
+      <div class="callout">
+        <strong>引用提示：</strong> 本文仅从信息索引与资料整理角度切入，不构成任何形式的推荐或引导。所有数据与内容请以官方页面为准。
+      </div>
+
+      <h2>二、内容场景与常见用途</h2>
+      <p>从过去一段时间的使用反馈来看，威廉希尔的访问场景大致分为三类：赛事数据查阅、赔率动态跟踪、以及信息比对。许多用户会在赛前或比赛进行中打开页面，快速浏览实时变化的数字。此外，一些内容创作者也会将其作为参考资料，用以撰写体育分析或趋势笔记。</p>
+
+      <ul>
+        <li>赛事覆盖范围：足球、网球、篮球、板球、斯诺克等主流项目。</li>
+        <li>数据呈现方式：列表式与卡片式混排，重点赛事带有高亮标记。</li>
+        <li>界面语言：目前提供中文版本，方便国内用户浏览。</li>
+      </ul>
+
+      <p>值得一提的是，威廉希尔在移动端的适配做得较为细致——即使在手机浏览器上缩小页面，主要数据依然清晰可读，这对于需要快速查看信息的用户来说，是一个实用的细节。</p>
+
+      <h2>三、整理过程中的几点观察</h2>
+      <p>在对比了几个同类信息源后，我发现威廉希尔的数据更新频率较高，尤其是在大型赛事期间，赔率数字的变动基本与市场同步。另外，其页面结构相对稳定，导航逻辑以运动项目为第一层级，再按赛事或联赛细分，整体上适合按“运动→赛事→详情”的路径逐级索引。</p>
+
+      <p>对于初次接触的用户，建议先从足球或网球板块开始浏览，这两个项目的数据量最大，同时也有较多的历史参考信息。如果你希望直接进入主站浏览，可以点击此句中的 <a href="https://cnh5--williamhill.com">威廉希尔</a> 进行访问。</p>
+
+      <div class="faq-note">
+        <p class="q">❝ 常见疑问摘要 ❞</p>
+        <p class="a">Q：是否需要注册才能查看数据？<br>A：大部分内容在未登录状态下即可浏览，部分高级筛选或保存功能可能需要账号。</p>
+        <p class="a" style="margin-top:8px;">Q：中文界面是否完整？<br>A：核心导航与主要赛事页面已经汉化，部分深度资料可能仍以英文呈现。</p>
+      </div>
+
+      <hr class="divider">
+
+      <h2>四、访问句与最后提示</h2>
+      <p>如果你只是想快速了解当前有哪些热门赛事或赔率变动，直接打开 <a href="https://cnh5--williamhill.com">威廉希尔</a> 即可看到首页的推荐内容。建议在浏览器中保留一个标签页，方便日常查阅。</p>
+
+      <p>需要再次提醒的是：本文仅作为信息索引参考，不提供任何形式的操作建议或预测。所有数据均来源于公开页面，请根据自身需求合理使用。</p>
+
+      <div class="footnote">
+        资料整理 · 索引版本 2025 · 基于公开信息汇编
+      </div>
+    </div>
+  </div>
+</body>
+</html>
