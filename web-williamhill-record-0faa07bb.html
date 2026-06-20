@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>威廉希尔 · 从一段老话说起</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f9f6ef;
+      font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+      color: #2e2b26;
+      line-height: 1.7;
+      padding: 3rem 1rem;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fefcf7;
+      padding: 3rem 2.8rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 0.6rem; }
+      .page { padding: 2rem 1.5rem; border-radius: 12px; }
+    }
+
+    /* 开篇短句 —— 电影感 */
+    .opening {
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #a08b76;
+      letter-spacing: 0.06em;
+      border-left: 3px solid #dcccba;
+      padding-left: 1.2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #3a3530;
+      margin-bottom: 0.3rem;
+    }
+    .subhead {
+      color: #8f7d6b;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed #e3d9ce;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* 主体段落 */
+    p {
+      margin-bottom: 1.4rem;
+      text-align: justify;
+      word-break: break-word;
+    }
+    a {
+      color: #7a5f4a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8a087;
+      transition: border 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: #4d3b2c;
+      border-bottom: 1px solid #7a5f4a;
+    }
+
+    /* 引用块 / 提示框 */
+    .note-box {
+      background: #f4efe8;
+      padding: 1.6rem 2rem;
+      border-radius: 18px;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+      border-left: 4px solid #cbb59e;
+    }
+    .note-box strong {
+      color: #5c4b3b;
+      font-weight: 500;
+    }
+
+    /* 特点列表 —— 温和卡片式 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0 2.5rem;
+    }
+    .feature-card {
+      flex: 1 1 200px;
+      background: #f9f4ed;
+      border-radius: 16px;
+      padding: 1.4rem 1.2rem;
+      border: 1px solid #e9dfd3;
+      transition: background 0.2s;
+    }
+    .feature-card:hover {
+      background: #f0e8dd;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5c4b3b;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #5c534b;
+      margin-bottom: 0;
+    }
+
+    /* FAQ 摘要 —— 简练温和 */
+    .faq-summary {
+      margin: 2.4rem 0 2rem;
+      background: #fbf8f3;
+      padding: 1.4rem 1.8rem;
+      border-radius: 20px;
+      border: 1px solid #ede4d9;
+    }
+    .faq-summary details {
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid #ede4d9;
+      padding-bottom: 0.6rem;
+    }
+    .faq-summary details:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-summary summary {
+      cursor: pointer;
+      font-weight: 400;
+      color: #5c4b3b;
+      padding: 0.2rem 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+    .faq-summary summary::before {
+      content: "▸";
+      margin-right: 0.5rem;
+      color: #b59d86;
+      transition: transform 0.2s;
+    }
+    .faq-summary details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .faq-summary .answer {
+      padding: 0.5rem 0 0.2rem 1.4rem;
+      color: #5c534b;
+      font-size: 0.92rem;
+    }
+
+    /* 温和结尾 */
+    .closing {
+      margin-top: 2.6rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e3d9ce;
+      font-size: 0.95rem;
+      color: #7b6e61;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* 小装饰 */
+    .separator-dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: #d3c4b4;
+      border-radius: 50%;
+      margin: 0 0.6rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开篇短句 -->
+  <div class="opening">
+    “有些名字，一听就知道有年头了。”
+  </div>
+
+  <h1>威廉希尔</h1>
+  <div class="subhead">一个老名字，一段新叙述</div>
+
+  <!-- 承接段落：从站点介绍与可信说明的角度 -->
+  <p>
+    说来也简单——你大概在某个老友的聊天里，或者翻旧文章时，又碰上了“威廉希尔”这四个字。它不靠花哨的广告词，也没有铺天盖地的弹窗，只是安安静静地待在那里，像一个老邻居的姓氏。实际上，围绕这个名字搭建起来的网站 <a href="https://web--williamhill.com">威廉希尔</a>，更像是一本被反复翻阅的笔记，记录着与这个名字相关的点滴、来源以及日常的使用场景。
+  </p>
+
+  <p>
+    为什么说它可信呢？倒不是因为什么认证标签，而是它的叙述方式很平实——没有一惊一乍的标题，也没有非让你马上做什么的紧迫感。你慢慢读，它慢慢讲。从名字的由来，到常见的用法，再到一些细碎但贴心的提醒，信息都摆在那里，清清楚楚。这一点，在如今喧闹的网络角落里，反倒显得稀罕了。
+  </p>
+
+  <!-- 引用块 / 提示框：温和提醒 -->
+  <div class="note-box">
+    <strong>一点小提醒：</strong> 如果你第一次去 <a href="https://web--williamhill.com">威廉希尔</a> 翻看，建议从“关于”或“常见问题”开始。那两部分的语气最像朋友聊天，不会让你觉得冷冰冰。
+  </div>
+
+  <!-- 特点列表 —— 差异化卡片 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>叙述有温度</h3>
+      <p>每段文字都像是有人坐在对面讲给你听，不生硬，不赶时间。</p>
+    </div>
+    <div class="feature-card">
+      <h3>结构很通透</h3>
+      <p>没有层层嵌套的菜单，打开什么就是什么，路标清楚，不会迷路。</p>
+    </div>
+    <div class="feature-card">
+      <h3>更新有节奏</h3>
+      <p>内容不是一次性倒出来，而是像连载一样，隔段时间添一点新的东西，保持新鲜。</p>
+    </div>
+    <div class="feature-card">
+      <h3>氛围安静</h3>
+      <p>没有弹窗、没有自动播放的视频、没有闪烁的广告，就像一间光线柔和的旧书房。</p>
+    </div>
+  </div>
+
+  <!-- 场景段落 -->
+  <p>
+    你可以在周末下午，泡一杯茶，把手机放在一边，慢慢逛一逛 <a href="https://web--williamhill.com">威廉希尔</a>。它不急着让你记住什么，也不强求你马上做决定。有时候，你只是随便划两下，反而能发现一些有意思的小细节——比如某个词的解释突然让你想起很久以前的一件事，或者某段话恰好解答了你一直以来的困惑。这种不期而遇的舒服，大概就是它最特别的地方。
+  </p>
+
+  <!-- FAQ 摘要（折叠） -->
+  <div class="faq-summary">
+    <details>
+      <summary>“威廉希尔”这个名字有什么特别的说法吗？</summary>
+      <div class="answer">
+        名字本身可以追溯到一种老式的、带有家族印记的称谓方式。网站沿着这条线索，整理了几种常见的解释和演变，篇幅不长，读起来像翻一本旧相册。
+      </div>
+    </details>
+    <details>
+      <summary>第一次去，应该从哪里看起？</summary>
+      <div class="answer">
+        从首页往下慢慢滑就好。如果你对某个具体话题感兴趣，可以点进“笔记”那一栏，里面按日期排好了，很方便。
+      </div>
+    </details>
+    <details>
+      <summary>内容会频繁更新吗？</summary>
+      <div class="answer">
+        没有固定的更新日历，但经常会有新内容。有时候是一段短文，有时候是对旧内容的补充。保持一点期待也挺好的。
+      </div>
+    </details>
+  </div>
+
+  <!-- 温和结尾 -->
+  <div class="closing">
+    一个名字，一段叙述，不赶路的人自然会遇见。
+  </div>
+
+</div>
+</body>
+</html>
